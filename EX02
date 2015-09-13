@@ -1,0 +1,4 @@
+def topkek(s6ne):
+    for i in range(len(s6ne)): s6ne = str(s6ne.replace("()""[]", "").replace("[]", "").replace("{}", ""))
+    if len(s6ne) > 0: return False   
+    return True
