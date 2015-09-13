@@ -1,0 +1,29 @@
+def pakkimine(string):
+	list1 = []
+	for i in range(len(string)):
+		if string.count(string[i]) > 1:			
+			if string[i] in list1:
+				continue
+			else:
+				list1.append(string[i])
+				list1.append(str(string.count(string[i])))
+		else:
+			list1.append(string[i])
+	if len(string) <= len(list1):
+		return string
+	return "".join(list1)
+
+def lahtipakkimine(string):
+	list1 = []
+	for i in range(len(string)):
+		if i == len(string) - 1:
+			if string[i].isalpha() == True:
+				list1.append(string[i])
+				break
+		elif i < len(string) - 1:
+			if string[i].isdigit() == True and string[i+1].isdigit() == True:
+				list1.append(string[i-1] * (int(string[i] + string[i + 1])))
+			elif string[i].isalpha() == True and string[i + 1].isdigit() == True:
+				list1.append(string[i] * int(string[i + 1]))
+	return "".join(list1)
+
