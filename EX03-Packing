@@ -21,7 +21,9 @@ def lahtipakkimine(string):
 				list1.append(string[i])
 				break
 		elif i < len(string) - 1:
-			if string[i].isdigit() == True and string[i+1].isdigit() == True:
+			if string[i].isalpha() == True and string[i + 1].isalpha() == True:
+				list1.append(string[i])
+			elif string[i].isdigit() == True and string[i+1].isdigit() == True:
 				list1.append(string[i-1] * (int(string[i] + string[i + 1])))
 			elif string[i].isalpha() == True and string[i + 1].isdigit() == True:
 				list1.append(string[i] * int(string[i + 1]))
